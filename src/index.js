@@ -16,6 +16,6 @@ app.use(userRouter)
 
 //application listening to the below server
 app.listen(port, () => {
-    console.log('Server staterd at '+ port);
+    console.log('Server started at '+ port);
     
 })
