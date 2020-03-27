@@ -14,7 +14,7 @@ router.post('/users', async (req, res) =>{
     try{
         //await can be called only on promises
         const saveUSer = await user.save()
-    res.status(200).send(user)
+    res.status(201).send(user)
     } catch(e){
         res.status(400).send(e)
     }
@@ -30,7 +30,7 @@ router.post('/users', async (req, res) =>{
 router.get('/users', async (req, res)=> {
    try{
        const users = await User.find({})
-        res.status(201).send(users)
+        res.status(200).send(users)
     } catch(e) {
         res.status(500).send(e)
     }
@@ -75,7 +75,7 @@ router.patch('/users/:id', async(req, res) => {
         if(!user){
             return res.status(404).send()
         }
-        res.send(user)
+        res.status(200).send(user)
     } catch(e){
         res.send(e)
     }
